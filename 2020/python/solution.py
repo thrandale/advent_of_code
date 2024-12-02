@@ -6,8 +6,10 @@ from typing import Generator
 
 
 class Solution:
+    parseLinesAsInt = False
+    parseLinesAsSet = False
     inputBlocks: list[str]
-    inputLines: list[str]
+    inputLines: list[str] | set[str] | list[int] | set[int]
     inputText: str
 
     @classmethod
@@ -51,7 +53,13 @@ class Solution:
                 cls.inputText = f.read().strip()
 
             cls.inputBlocks = cls.inputText.split("\n\n")
-            cls.inputLines = cls.inputText.split("\n")
+            if cls.parseLinesAsInt:
+                cls.inputLines = list(map(int, cls.inputText.split("\n")))
+            else:
+                cls.inputLines = cls.inputText.split("\n")
+
+            if cls.parseLinesAsSet:
+                cls.inputLines = set(cls.inputLines)
 
         cls.__Part1()
         cls.__Part2()
