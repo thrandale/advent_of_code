@@ -1,30 +1,24 @@
+from functools import cache
 from solution import Solution
 
 
 class Day11(Solution):
-    stoneCache = {}
-
     @classmethod
+    @cache
     def __ProcessStone(cls, stone: int, blinks: int) -> int:
-        key = (stone, blinks)
-        if key in cls.stoneCache:
-            return cls.stoneCache[key]
-
         if blinks == 0:
-            cls.stoneCache[key] = 1
+            return 1
         elif stone == 0:
-            cls.stoneCache[key] = cls.__ProcessStone(1, blinks - 1)
+            return cls.__ProcessStone(1, blinks - 1)
         elif len(stoneStr := str(stone)) % 2 == 0:
             mid = len(stoneStr) // 2
             left = int(stoneStr[:mid])
             right = int(stoneStr[mid:])
-            cls.stoneCache[key] = cls.__ProcessStone(
-                left, blinks - 1
-            ) + cls.__ProcessStone(right, blinks - 1)
+            return cls.__ProcessStone(left, blinks - 1) + cls.__ProcessStone(
+                right, blinks - 1
+            )
         else:
-            cls.stoneCache[key] = cls.__ProcessStone(stone * 2024, blinks - 1)
-
-        return cls.stoneCache[key]
+            return cls.__ProcessStone(stone * 2024, blinks - 1)
 
     @classmethod
     def _Part1(cls):
