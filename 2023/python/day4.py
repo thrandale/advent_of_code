@@ -3,7 +3,7 @@ from solution import Solution
 
 class Day4(Solution):
     @classmethod
-    def __GetWins(cls) -> list[int]:
+    def GetWins(cls) -> list[int]:
         return [
             len(
                 set.intersection(
@@ -17,12 +17,12 @@ class Day4(Solution):
         ]
 
     @classmethod
-    def _Part1(cls) -> int:
-        return sum(2 ** (win - 1) for win in cls.__GetWins() if win > 0)
+    def Part1(cls) -> int:
+        return sum(2 ** (win - 1) for win in cls.GetWins() if win > 0)
 
     @classmethod
-    def _Part2(cls) -> int:
-        wins = cls.__GetWins()
+    def Part2(cls) -> int:
+        wins = cls.GetWins()
         instances = [1] * len(wins)
         for card, win in enumerate(wins):
             for i in range(card + 1, card + win + 1):

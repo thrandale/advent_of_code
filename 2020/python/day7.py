@@ -3,21 +3,21 @@ from solution import Solution
 
 
 class Rule:
-    def __init__(self):
+    def init(self):
         self.canContain: dict[Rule, int] = {}
         self.containedBy: set[Rule] = set()
 
 
 class Day7(Solution):
     @classmethod
-    def __CountChildren(cls, rule: Rule) -> int:
+    def CountChildren(cls, rule: Rule) -> int:
         return sum(
-            count * (1 + cls.__CountChildren(child))
+            count * (1 + cls.CountChildren(child))
             for child, count in rule.canContain.items()
         )
 
     @classmethod
-    def __GetRules(cls) -> dict:
+    def GetRules(cls) -> dict:
         rules: dict[str, Rule] = defaultdict(Rule)
         for line in cls.inputLines:
             bag, contents = line.split(" bags contain ")
@@ -31,8 +31,8 @@ class Day7(Solution):
         return rules
 
     @classmethod
-    def _Part1(cls) -> int:
-        rules = cls.__GetRules()
+    def Part1(cls) -> int:
+        rules = cls.GetRules()
         canContainGold = set()
         toCheck = [rules["shiny gold"]]
 
@@ -46,9 +46,9 @@ class Day7(Solution):
         return len(canContainGold)
 
     @classmethod
-    def _Part2(cls) -> int:
-        rules = cls.__GetRules()
-        return cls.__CountChildren(rules["shiny gold"])
+    def Part2(cls) -> int:
+        rules = cls.GetRules()
+        return cls.CountChildren(rules["shiny gold"])
 
 
 Day7.Run("day7.txt")

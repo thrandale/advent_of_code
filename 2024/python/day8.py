@@ -5,7 +5,7 @@ from solution import Solution
 
 class Day8(Solution):
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         antinodes = set()
         antennas = defaultdict(list)
         for y, line in enumerate(cls.inputLines):
@@ -29,7 +29,7 @@ class Day8(Solution):
         return len(antinodes)
 
     @classmethod
-    def _Part2(cls):
+    def Part2(cls):
         antinodes = set()
         antennas = defaultdict(list)
         for y, line in enumerate(cls.inputLines):

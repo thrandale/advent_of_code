@@ -2,7 +2,7 @@ from solution import Solution
 
 
 class Day5(Solution):
-    def __CalculateId(line: str) -> int:
+    def CalculateId(line: str) -> int:
         minRow = 0
         maxRow = 127
         for char in line[:7]:
@@ -22,12 +22,12 @@ class Day5(Solution):
         return minRow * 8 + minCol
 
     @classmethod
-    def _Part1(cls) -> int:
-        return max(cls.__CalculateId(line) for line in cls.inputLines)
+    def Part1(cls) -> int:
+        return max(cls.CalculateId(line) for line in cls.inputLines)
 
     @classmethod
-    def _Part2(cls) -> int:
-        ids = set(cls.__CalculateId(line) for line in cls.inputLines)
+    def Part2(cls) -> int:
+        ids = set(cls.CalculateId(line) for line in cls.inputLines)
         return next(id + 1 for id in ids if id + 1 not in ids and id + 2 in ids)
 
 

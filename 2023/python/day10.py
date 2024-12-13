@@ -102,7 +102,7 @@ class Day10(Solution):
         return 0 <= coords[0] < len(grid[0]) and 0 <= coords[1] < len(grid)
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         steps = 1  # Start node is already a step
         grid = cls.GetGrid()
         sPos, lastDir, currentChar, currentPos = cls.GetFirstMove(grid)
@@ -121,7 +121,7 @@ class Day10(Solution):
         return int(steps / 2)
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         inverseCorners = {
             "L": {Dir.DOWN, Dir.LEFT},
             "F": {Dir.LEFT, Dir.UP},

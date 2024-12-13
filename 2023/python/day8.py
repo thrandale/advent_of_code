@@ -1,5 +1,6 @@
-from solution import Solution
 import math
+
+from solution import Solution
 
 
 class Day8(Solution):
@@ -14,7 +15,7 @@ class Day8(Solution):
         return nodes
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         route = cls.inputLines[0]
         nodes = cls.GetNodes()
 
@@ -30,7 +31,7 @@ class Day8(Solution):
         return steps
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         route = cls.inputLines[0]
         nodes = cls.GetNodes()
 

@@ -11,7 +11,7 @@ class Direction(IntEnum):
 
 class Day12(Solution):
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         pos = [0, 0]
         facing = Direction.E
 
@@ -43,7 +43,7 @@ class Day12(Solution):
         return abs(pos[0]) + abs(pos[1])
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         pos = [0, 0]
         waypoint = [10, 1]
 

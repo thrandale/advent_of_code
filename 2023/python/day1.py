@@ -17,7 +17,7 @@ class Day1(Solution):
     }
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         total = 0
         for line in cls.inputLines:
             nums = re.findall(r"\d", line)
@@ -25,7 +25,7 @@ class Day1(Solution):
         return total
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         total = 0
         for line in cls.inputLines:
             for key, value in cls.strNums.items():

@@ -1,5 +1,6 @@
 from solution import Solution
 
+
 FACINGS = {
     0: (0, -1),
     1: (1, 0),
@@ -14,14 +15,14 @@ class Day6(Solution):
     walls = set()
 
     @classmethod
-    def __WalkGrid(
+    def WalkGrid(
         cls,
         guardPos: tuple[int, int],
         facing: int,
     ) -> bool:
         steps = set()
         while True:
-            exited, newPos, facing = cls.__Step(guardPos, facing)
+            exited, newPos, facing = cls.Step(guardPos, facing)
             if exited:
                 return False
 
@@ -33,7 +34,7 @@ class Day6(Solution):
             guardPos = newPos
 
     @classmethod
-    def __Step(
+    def Step(
         cls,
         guardPos: tuple[int, int],
         facing: int,
@@ -56,7 +57,7 @@ class Day6(Solution):
         return False, nextPos, facing
 
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         guardIndex = cls.inputText.replace("\n", "").index("^")
         cls.w, cls.h = len(cls.inputLines[0]), len(cls.inputLines)
         guardPos = (guardIndex % cls.w, guardIndex // cls.w)
@@ -70,7 +71,7 @@ class Day6(Solution):
         visited = {guardPos}
         facing = 0
         while True:
-            exited, guardPos, facing = cls.__Step(guardPos, facing)
+            exited, guardPos, facing = cls.Step(guardPos, facing)
             if exited:
                 break
             visited.add(guardPos)
@@ -78,7 +79,7 @@ class Day6(Solution):
         return len(visited)
 
     @classmethod
-    def _Part2(cls):
+    def Part2(cls):
         guardIndex = cls.inputText.replace("\n", "").index("^")
         cls.w, cls.h = len(cls.inputLines[0]), len(cls.inputLines)
         guardPos = (guardIndex % cls.w, guardIndex // cls.w)
@@ -93,7 +94,7 @@ class Day6(Solution):
         options = 0
         visited = {guardPos}
         while True:
-            exited, guardPos, facing = cls.__Step(guardPos, facing)
+            exited, guardPos, facing = cls.Step(guardPos, facing)
             visited.add(guardPos)
 
             dirs = FACINGS[facing]
@@ -108,7 +109,7 @@ class Day6(Solution):
                 and (0 <= nextPos[0] < cls.w and 0 <= nextPos[1] < cls.h)
             ):
                 cls.walls.add(nextPos)
-                if cls.__WalkGrid(guardPos, facing):
+                if cls.WalkGrid(guardPos, facing):
                     options += 1
                 cls.walls.remove(nextPos)
 

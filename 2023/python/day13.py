@@ -29,7 +29,7 @@ class Day13(Solution):
         return 0
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         colsToLeft = 0
         rowsAbove = 0
         for block in cls.inputBlocks:
@@ -42,7 +42,7 @@ class Day13(Solution):
         return colsToLeft + rowsAbove * 100
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         return 0
 
 

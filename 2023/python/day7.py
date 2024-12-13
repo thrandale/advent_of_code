@@ -1,6 +1,7 @@
 import re
-from solution import Solution
+
 from enum import Enum
+from solution import Solution
 
 
 class Hand(Enum):
@@ -54,7 +55,7 @@ class Day7(Solution):
             return Hand.HC
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         hands = [
             (hand, int(bid))
             for line in cls.inputLines
@@ -76,7 +77,7 @@ class Day7(Solution):
         return sum(allHands)
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         hands = [
             (hand, int(bid))
             for line in cls.inputLines

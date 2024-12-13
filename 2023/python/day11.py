@@ -29,11 +29,11 @@ class Day11(Solution):
         return total
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         return cls.CalculateDistances(cls)
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         return cls.CalculateDistances(cls, 999_999)
 
 

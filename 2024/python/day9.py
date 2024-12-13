@@ -3,7 +3,7 @@ from solution import Solution
 
 class Day9(Solution):
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         blocks = []
         for i, num in enumerate(map(int, cls.inputText)):
             if i % 2 == 0:
@@ -24,7 +24,7 @@ class Day9(Solution):
         return sum(num * i for i, num in enumerate(blocks) if num != ".")
 
     @classmethod
-    def _Part2(cls):
+    def Part2(cls):
         drive: list[tuple[int, int]] = []  # (start, length)
         gaps: list[tuple[int, int]] = []  # (start, length)
 

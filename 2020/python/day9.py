@@ -7,7 +7,7 @@ class Day9(Solution):
     part1 = 0
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         cls.part1 = next(
             cls.inputLines[i]
             for i in range(cls.rangeToCheck, len(cls.inputLines))
@@ -20,7 +20,7 @@ class Day9(Solution):
         return cls.part1
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         return next(
             min(cls.inputLines[i:j]) + max(cls.inputLines[i:j])
             for i in range(len(cls.inputLines))

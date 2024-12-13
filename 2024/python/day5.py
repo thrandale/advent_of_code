@@ -5,7 +5,7 @@ from solution import Solution
 class Day5(Solution):
 
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         rules = defaultdict(set)
         for rule in cls.inputBlocks[0].splitlines():
             a, b = rule.split("|")
@@ -29,7 +29,7 @@ class Day5(Solution):
         return total
 
     @classmethod
-    def _Part2(cls):
+    def Part2(cls):
         rules = defaultdict(set)
         for rule in cls.inputBlocks[0].splitlines():
             a, b = rule.split("|")

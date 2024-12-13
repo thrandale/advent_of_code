@@ -3,7 +3,7 @@ from solution import Solution
 
 class Day12(Solution):
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         total = 0
         for line in cls.inputLines:
             cond, criteria = line.split(" ")
@@ -12,7 +12,7 @@ class Day12(Solution):
             for i in range(0, len(cond)):
                 if cond[i] == "?":
                     if all(cond[i:i+current] == "?"):
-                        
+
 
             print(cond)
             print(criteria)
@@ -20,7 +20,7 @@ class Day12(Solution):
         return 0
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         return 0
 
 

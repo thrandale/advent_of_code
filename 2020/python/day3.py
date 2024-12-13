@@ -4,7 +4,7 @@ from solution import Solution
 
 class Day3(Solution):
     @staticmethod
-    def __Traverse(map: list[str], slope: tuple[int, int]) -> int:
+    def Traverse(map: list[str], slope: tuple[int, int]) -> int:
         x = 0
         y = 0
         trees = 0
@@ -18,15 +18,15 @@ class Day3(Solution):
         return trees
 
     @classmethod
-    def _Part1(cls) -> int:
-        return cls.__Traverse(cls.inputLines, (3, 1))
+    def Part1(cls) -> int:
+        return cls.Traverse(cls.inputLines, (3, 1))
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         return reduce(
             lambda a, b: a * b,
             (
-                cls.__Traverse(cls.inputLines, slope)
+                cls.Traverse(cls.inputLines, slope)
                 for slope in [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
             ),
         )

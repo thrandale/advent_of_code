@@ -10,11 +10,11 @@ class Day15(Solution):
         return total
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         return sum(cls.Hash(item) for item in cls.inputText.split(","))
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         boxes = {}
         for item in cls.inputText.split(","):
             label, value = (item[:-1], None) if item.endswith("-") else item.split("=")

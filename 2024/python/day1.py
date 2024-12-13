@@ -4,7 +4,7 @@ from solution import Solution
 
 class Day1(Solution):
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         left = []
         right = []
         for line in cls.inputLines:
@@ -18,7 +18,7 @@ class Day1(Solution):
         return sum(abs(left[i] - right[i]) for i in range(len(left)))
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         left = []
         counts = defaultdict(int)
         for line in cls.inputLines:

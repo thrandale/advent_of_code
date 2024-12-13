@@ -1,5 +1,6 @@
-from solution import Solution
 import math
+
+from solution import Solution
 
 
 class Day6(Solution):
@@ -17,13 +18,13 @@ class Day6(Solution):
         return math.ceil((-b - (b**2 - 4 * c) ** 0.5) / 2 + 0.01)
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         return math.prod(
             cls.QuadPos(-t, d) - cls.QuadNeg(-t, d) + 1 for t, d in zip(cls.t, cls.d)
         )
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         t = int("".join(map(str, cls.t)))
         d = int("".join(map(str, cls.d)))
         return cls.QuadPos(-t, d) - cls.QuadNeg(-t, d) + 1

@@ -1,11 +1,12 @@
 from solution import Solution
 
+
 dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)]
 
 
 class Day10(Solution):
     @staticmethod
-    def __FollowTrail(grid: list[list[int]], pos: tuple[int, int]):
+    def FollowTrail(grid: list[list[int]], pos: tuple[int, int]):
         trails = []
         currentHeight = grid[pos[1]][pos[0]]
 
@@ -17,25 +18,25 @@ class Day10(Solution):
                     if nextHeight == 9:
                         trails.append(nextPos)
                     else:
-                        trails.extend(Day10.__FollowTrail(grid, nextPos))
+                        trails.extend(Day10.FollowTrail(grid, nextPos))
 
         return trails
 
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         grid = tuple(tuple(map(int, line)) for line in cls.inputLines)
         return sum(
-            len(set(Day10.__FollowTrail(grid, (x, y))))
+            len(set(Day10.FollowTrail(grid, (x, y))))
             for y in range(len(grid))
             for x in range(len(grid[y]))
             if grid[y][x] == 0
         )
 
     @classmethod
-    def _Part2(cls):
+    def Part2(cls):
         grid = tuple(tuple(map(int, line)) for line in cls.inputLines)
         return sum(
-            len(Day10.__FollowTrail(grid, (x, y)))
+            len(Day10.FollowTrail(grid, (x, y)))
             for y in range(len(grid))
             for x in range(len(grid[y]))
             if grid[y][x] == 0

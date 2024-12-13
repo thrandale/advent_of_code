@@ -7,14 +7,14 @@ class Day4(Solution):
     required = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         return sum(
             all(field in passport for field in cls.required)
             for passport in cls.inputBlocks
         )
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         valid = 0
         for passport in cls.inputBlocks:
             if not all(field in passport for field in cls.required):

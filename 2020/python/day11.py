@@ -11,9 +11,7 @@ class Day11(Solution):
     part2Threshold = 5
 
     @staticmethod
-    def __CalculateNeighborsPart1(
-        grid: list[str], y: int, x: int, w: int, h: int
-    ) -> int:
+    def CalculateNeighborsPart1(grid: list[str], y: int, x: int, w: int, h: int) -> int:
         occupiedNeighbors = 0
         for dy, dx in Day11.neighbors:
             ny, nx = y + dy, x + dx
@@ -25,9 +23,7 @@ class Day11(Solution):
         return occupiedNeighbors
 
     @staticmethod
-    def __CalculateNeighborsPart2(
-        grid: list[str], y: int, x: int, w: int, h: int
-    ) -> int:
+    def CalculateNeighborsPart2(grid: list[str], y: int, x: int, w: int, h: int) -> int:
         occupiedNeighbors = 0
         for dy, dx in Day11.neighbors:
             ny, nx = y + dy, x + dx
@@ -46,7 +42,7 @@ class Day11(Solution):
         return occupiedNeighbors
 
     @classmethod
-    def __Simulate(
+    def Simulate(
         cls,
         calculateNeighbors: Callable[[list[str], int, int, int, int], int],
         switchThreshold: int,
@@ -81,16 +77,16 @@ class Day11(Solution):
         return grid.count("#")
 
     @classmethod
-    def _Part1(cls) -> int:
-        return cls.__Simulate(
-            cls.__CalculateNeighborsPart1,
+    def Part1(cls) -> int:
+        return cls.Simulate(
+            cls.CalculateNeighborsPart1,
             Day11.part1Threshold,
         )
 
     @classmethod
-    def _Part2(cls) -> int:
-        return cls.__Simulate(
-            cls.__CalculateNeighborsPart2,
+    def Part2(cls) -> int:
+        return cls.Simulate(
+            cls.CalculateNeighborsPart2,
             Day11.part2Threshold,
         )
 

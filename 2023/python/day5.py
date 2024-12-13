@@ -3,7 +3,7 @@ from solution import Solution
 
 class Day5(Solution):
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         seeds = [
             [seed]
             for seed in map(int, cls.inputBlocks[0].split(": ")[1].strip().split())
@@ -28,7 +28,7 @@ class Day5(Solution):
         return min(seeds, key=lambda x: x[-1])[-1]
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         seeds = [
             (seeds[i], seeds[i] + seeds[i + 1] - 1)
             for seeds in [

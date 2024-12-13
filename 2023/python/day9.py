@@ -17,7 +17,7 @@ class Day9(Solution):
         return sequences
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         total = 0
         for line in cls.inputLines:
             sequences = cls.GetSequences(line)
@@ -29,7 +29,7 @@ class Day9(Solution):
         return total
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         total = 0
         for line in cls.inputLines:
             sequences = cls.GetSequences(line)

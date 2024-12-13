@@ -4,14 +4,14 @@ from solution import Solution
 
 
 class Edge:
-    def __init__(self, x1, y1, x2, y2, inside: int):
+    def init(self, x1, y1, x2, y2, inside: int):
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
         self.inside = inside
 
-    def __eq__(self, other):
+    def eq(self, other):
         return (
             self.x1 == other.x1
             and self.y1 == other.y1
@@ -19,7 +19,7 @@ class Edge:
             and self.y2 == other.y2
         )
 
-    def __hash__(self):
+    def hash(self):
         return hash((self.x1, self.y1, self.x2, self.y2))
 
     def IsConnected(self, other):
@@ -54,14 +54,14 @@ class Edge:
 
 
 class Plot:
-    def __init__(self, edges: set[Edge]):
+    def init(self, edges: set[Edge]):
         self.edges = edges
         self.area = 1
 
 
 class Day12(Solution):
     @classmethod
-    def __GetPlots(cls):
+    def GetPlots(cls):
         plotsByKey: dict[str, list[Plot]] = defaultdict(list)
         for y, line in enumerate(cls.inputLines):
             for x, char in enumerate(line):
@@ -98,16 +98,16 @@ class Day12(Solution):
         return plotsByKey
 
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         return sum(
             plot.area * len(plot.edges)
-            for plots in cls.__GetPlots().values()
+            for plots in cls.GetPlots().values()
             for plot in plots
         )
 
     @classmethod
-    def _Part2(cls):
-        plotsByKey = cls.__GetPlots()
+    def Part2(cls):
+        plotsByKey = cls.GetPlots()
         for plots in plotsByKey.values():
             for plot in plots:
                 # merge any edges that are connected co-linearly

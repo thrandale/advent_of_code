@@ -44,7 +44,7 @@ class Day14(Solution):
         cls.grid = tuple(newGrid)
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         cls.grid = tuple(cls.inputLines)
         cls.TransposeGrid()
         cls.TiltGridWest()
@@ -52,7 +52,7 @@ class Day14(Solution):
         return cls.CalcWeightOnNorth()
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         cls.grid = tuple(cls.inputLines)
         cls.TransposeGrid()
 

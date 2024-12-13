@@ -3,7 +3,7 @@ from solution import Solution
 
 class Day2(Solution):
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         total = 0
         maxColors = {"red": 12, "green": 13, "blue": 14}
 
@@ -23,7 +23,7 @@ class Day2(Solution):
         return total
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         total = 0
         for game in cls.inputLines:
             maxUsed = {}

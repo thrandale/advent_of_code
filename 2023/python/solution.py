@@ -12,13 +12,13 @@ class Solution:
     @classmethod
     def __Part1(cls) -> int:
         with cls.__TimeIt():
-            result = cls._Part1()
+            result = cls.Part1()
             print(f"Part 1: {result}", end=", ")
 
     @classmethod
     def __Part2(cls) -> int:
         with cls.__TimeIt():
-            result = cls._Part2()
+            result = cls.Part2()
             print(f"Part 2: {result}", end=", ")
 
     @staticmethod
@@ -34,11 +34,11 @@ class Solution:
             print(f"Took {total:.3f}s")
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         raise NotImplementedError
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         raise NotImplementedError
 
     @classmethod

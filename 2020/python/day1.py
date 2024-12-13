@@ -7,7 +7,7 @@ class Day1(Solution):
     parseLinesAsSet = True
 
     @classmethod
-    def _Part1(cls) -> int:
+    def Part1(cls) -> int:
         return next(
             num * num2
             for num in cls.inputLines
@@ -15,7 +15,7 @@ class Day1(Solution):
         )
 
     @classmethod
-    def _Part2(cls) -> int:
+    def Part2(cls) -> int:
         return next(
             num1 * num2 * num3
             for num1, num2 in combinations(cls.inputLines, 2)

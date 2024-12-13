@@ -6,7 +6,7 @@ from solution import Solution
 class Day4(Solution):
 
     @classmethod
-    def _Part1(cls):
+    def Part1(cls):
         letters = "XMAS"
         grid = [list(line) for line in cls.inputLines]
         return sum(
@@ -25,7 +25,7 @@ class Day4(Solution):
         )
 
     @classmethod
-    def _Part2(cls):
+    def Part2(cls):
         num = len(cls.inputLines[0]) - 1
         pattern = (
             rf"M(?=.S.{{{num}}}A.{{{num}}}M.S)|"
