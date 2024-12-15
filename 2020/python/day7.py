@@ -3,7 +3,7 @@ from solution import Solution
 
 
 class Rule:
-    def init(self):
+    def __init__(self):
         self.canContain: dict[Rule, int] = {}
         self.containedBy: set[Rule] = set()
 
