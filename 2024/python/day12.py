@@ -4,14 +4,14 @@ from solution import Solution
 
 
 class Edge:
-    def init(self, x1, y1, x2, y2, inside: int):
+    def __init__(self, x1, y1, x2, y2, inside: int):
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
         self.inside = inside
 
-    def eq(self, other):
+    def __eq__(self, other):
         return (
             self.x1 == other.x1
             and self.y1 == other.y1
@@ -19,7 +19,7 @@ class Edge:
             and self.y2 == other.y2
         )
 
-    def hash(self):
+    def __hash__(self):
         return hash((self.x1, self.y1, self.x2, self.y2))
 
     def IsConnected(self, other):
@@ -54,7 +54,7 @@ class Edge:
 
 
 class Plot:
-    def init(self, edges: set[Edge]):
+    def __init__(self, edges: set[Edge]):
         self.edges = edges
         self.area = 1
 
