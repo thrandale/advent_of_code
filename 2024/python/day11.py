@@ -33,5 +33,4 @@ class Day11(Solution):
         )
 
 
-if name == "main":
-    Day11.Run("day11.txt")
+Day11.Run("day11.txt")
