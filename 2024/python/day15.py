@@ -170,4 +170,4 @@ class Day15(Solution):
 
 
 if __name__ == "__main__":
-    Day15.Run("day15.txt")
+    Day15.Run()

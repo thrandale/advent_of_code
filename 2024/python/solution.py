@@ -45,22 +45,23 @@ class Solution:
         raise NotImplementedError
 
     @classmethod
-    def Run(cls, inputFile: str | None = None) -> None:
-        if inputFile is not None:
-            inputFile = os.path.join(os.getcwd(), "2024", "input", inputFile)
+    def Run(cls) -> None:
+        inputFile = os.path.join(
+            os.getcwd(), "2024", "input", cls.__name__.lower() + ".txt"
+        )
 
-            with open(inputFile, "r") as f:
-                cls.inputText = f.read().strip()
+        with open(inputFile, "r") as f:
+            cls.inputText = f.read().strip()
 
-            cls.inputBlocks = cls.inputText.split("\n\n")
+        cls.inputBlocks = cls.inputText.split("\n\n")
 
-            if cls.parseLinesAsInt:
-                cls.inputLines = list(map(int, cls.inputText.split("\n")))
-            else:
-                cls.inputLines = cls.inputText.split("\n")
+        if cls.parseLinesAsInt:
+            cls.inputLines = list(map(int, cls.inputText.split("\n")))
+        else:
+            cls.inputLines = cls.inputText.split("\n")
 
-            if cls.parseLinesAsSet:
-                cls.inputLines = set(cls.inputLines)
+        if cls.parseLinesAsSet:
+            cls.inputLines = set(cls.inputLines)
 
         cls.__Part1()
         cls.__Part2()

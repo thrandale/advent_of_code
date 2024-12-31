@@ -147,4 +147,4 @@ class Day24(Solution):
 
 
 if __name__ == "__main__":
-    Day24.Run("day24.txt")
+    Day24.Run()

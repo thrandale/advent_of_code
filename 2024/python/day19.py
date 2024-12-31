@@ -34,4 +34,4 @@ class Day19(Solution):
 
 
 if __name__ == "__main__":
-    Day19.Run("day19.txt")
+    Day19.Run()
