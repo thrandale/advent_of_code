@@ -51,4 +51,5 @@ class Day7(Solution):
         return cls.CountChildren(rules["shiny gold"])
 
 
-Day7.Run("day7.txt")
+if __name__ == "__main__":
+    Day7.Run("day7.txt")

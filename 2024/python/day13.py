@@ -29,4 +29,5 @@ class Day13(Solution):
         return sum(cls.Solve(block, 10_000_000_000_000) for block in cls.inputBlocks)
 
 
-Day13.Run("day13.txt")
+if __name__ == "__main__":
+    Day13.Run("day13.txt")

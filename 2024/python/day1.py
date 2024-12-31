@@ -29,4 +29,5 @@ class Day1(Solution):
         return sum(num * counts[num] for num in left)
 
 
-Day1.Run("day1.txt")
+if __name__ == "__main__":
+    Day1.Run("day1.txt")

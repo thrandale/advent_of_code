@@ -27,4 +27,5 @@ class Day2(Solution):
         )
 
 
-Day2.Run("day2.txt")
+if __name__ == "__main__":
+    Day2.Run("day2.txt")

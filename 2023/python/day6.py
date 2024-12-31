@@ -30,4 +30,5 @@ class Day6(Solution):
         return cls.QuadPos(-t, d) - cls.QuadNeg(-t, d) + 1
 
 
-Day6.Run()
+if __name__ == "__main__":
+    Day6.Run()

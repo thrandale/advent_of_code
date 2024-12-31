@@ -55,4 +55,5 @@ class Day4(Solution):
         return valid
 
 
-Day4.Run("day4.txt")
+if __name__ == "__main__":
+    Day4.Run("day4.txt")

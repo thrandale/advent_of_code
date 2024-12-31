@@ -137,4 +137,5 @@ class Day12(Solution):
         )
 
 
-Day12.Run("day12.txt")
+if __name__ == "__main__":
+    Day12.Run("day12.txt")

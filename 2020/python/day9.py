@@ -29,4 +29,5 @@ class Day9(Solution):
         )
 
 
-Day9.Run("day9.txt")
+if __name__ == "__main__":
+    Day9.Run("day9.txt")

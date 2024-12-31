@@ -55,4 +55,5 @@ class Day14(Solution):
             steps += 1
 
 
-Day14.Run("day14.txt")
+if __name__ == "__main__":
+    Day14.Run("day14.txt")

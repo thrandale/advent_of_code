@@ -105,4 +105,5 @@ class Day17(Solution):
         return cls.SolveForA(program, desiredOutput, startingA, len(desiredOutput) - 1)
 
 
-Day17.Run("day17.txt")
+if __name__ == "__main__":
+    Day17.Run("day17.txt")

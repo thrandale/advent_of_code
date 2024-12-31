@@ -119,4 +119,5 @@ class Day6(Solution):
         return options
 
 
-Day6.Run("day6.txt")
+if __name__ == "__main__":
+    Day6.Run("day6.txt")

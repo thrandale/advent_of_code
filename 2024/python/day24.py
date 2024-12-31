@@ -146,4 +146,5 @@ class Day24(Solution):
         return f"'{",".join(sorted(invalidGates))}'"
 
 
-Day24.Run("day24.txt")
+if __name__ == "__main__":
+    Day24.Run("day24.txt")

@@ -36,4 +36,5 @@ class Day10(Solution):
         return cls.CountArrangements()
 
 
-Day10.Run("day10.txt")
+if __name__ == "__main__":
+    Day10.Run("day10.txt")

@@ -59,4 +59,5 @@ class Day5(Solution):
         return min(seeds)[0]
 
 
-Day5.Run("day5.txt")
+if __name__ == "__main__":
+    Day5.Run("day5.txt")

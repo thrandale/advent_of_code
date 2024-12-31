@@ -37,4 +37,5 @@ class Day11(Solution):
         return cls.CalculateDistances(cls, 999_999)
 
 
-Day11.Run("day11.txt")
+if __name__ == "__main__":
+    Day11.Run("day11.txt")

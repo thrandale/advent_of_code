@@ -36,4 +36,5 @@ class Day4(Solution):
         return len(re.findall(pattern, cls.inputText, flags=re.DOTALL))
 
 
-Day4.Run("day4.txt")
+if __name__ == "__main__":
+    Day4.Run("day4.txt")

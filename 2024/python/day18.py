@@ -51,4 +51,5 @@ class Day18(Solution):
         return f"Byte {minBytes}, Coords: {cls.inputLines[minBytes - 1]}"
 
 
-Day18.Run("day18.txt")
+if __name__ == "__main__":
+    Day18.Run("day18.txt")

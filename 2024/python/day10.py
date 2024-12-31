@@ -43,4 +43,5 @@ class Day10(Solution):
         )
 
 
-Day10.Run("day10.txt")
+if __name__ == "__main__":
+    Day10.Run("day10.txt")

@@ -67,4 +67,5 @@ class Day23(Solution):
         return ",".join(sorted(max(cliques, key=len)))
 
 
-Day23.Run("day23.txt")
+if __name__ == "__main__":
+    Day23.Run("day23.txt")

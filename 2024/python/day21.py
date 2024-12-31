@@ -115,4 +115,5 @@ class Day21(Solution):
         return sum(cls.ScoreForCode(code, 25) for code in cls.inputLines)
 
 
-Day21.Run("day21.txt")
+if __name__ == "__main__":
+    Day21.Run("day21.txt")

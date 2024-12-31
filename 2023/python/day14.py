@@ -79,4 +79,5 @@ class Day14(Solution):
         return cls.CalcWeightOnNorth()
 
 
-Day14.Run("day14.txt")
+if __name__ == "__main__":
+    Day14.Run("day14.txt")

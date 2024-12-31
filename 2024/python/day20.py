@@ -96,4 +96,5 @@ class Day20(Solution):
         return cls.CheckCheats(20)
 
 
-Day20.Run("day20.txt")
+if __name__ == "__main__":
+    Day20.Run("day20.txt")

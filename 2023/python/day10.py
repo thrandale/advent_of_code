@@ -190,4 +190,5 @@ class Day10(Solution):
         return len(enclosed)
 
 
-Day10.Run("day10.txt")
+if __name__ == "__main__":
+    Day10.Run("day10.txt")

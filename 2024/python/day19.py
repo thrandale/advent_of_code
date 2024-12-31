@@ -33,4 +33,5 @@ class Day19(Solution):
         return sum(cls.CountWays(design) for design in designs)
 
 
-Day19.Run("day19.txt")
+if __name__ == "__main__":
+    Day19.Run("day19.txt")

@@ -51,4 +51,5 @@ class Day16(Solution):
         return len(cls.shortestPaths)
 
 
-Day16.Run("day16.txt")
+if __name__ == "__main__":
+    Day16.Run("day16.txt")

@@ -56,4 +56,5 @@ class Day8(Solution):
         return len(antinodes)
 
 
-Day8.Run("day8.txt")
+if __name__ == "__main__":
+    Day8.Run("day8.txt")

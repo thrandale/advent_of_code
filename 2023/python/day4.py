@@ -31,4 +31,5 @@ class Day4(Solution):
         return sum(instances)
 
 
-Day4.Run("day4.txt")
+if __name__ == "__main__":
+    Day4.Run("day4.txt")

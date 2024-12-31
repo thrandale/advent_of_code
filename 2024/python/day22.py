@@ -40,4 +40,5 @@ class Day22(Solution):
         return max(cls.seqMap.values())
 
 
-Day22.Run("day22.txt")
+if __name__ == "__main__":
+    Day22.Run("day22.txt")

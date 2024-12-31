@@ -31,4 +31,5 @@ class Day5(Solution):
         return next(id + 1 for id in ids if id + 1 not in ids and id + 2 in ids)
 
 
-Day5.Run("day5.txt")
+if __name__ == "__main__":
+    Day5.Run("day5.txt")
