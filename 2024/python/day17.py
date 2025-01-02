@@ -4,7 +4,13 @@ from solution import Solution
 class Day17(Solution):
 
     @staticmethod
-    def RunProgram(program: list[int], A: int, B: int = 0, C: int = 0) -> str:
+    def RunProgram(
+        program: list[int],
+        A: int,
+        B: int = 0,
+        C: int = 0,
+        desiredOutputLength: int | None = None,
+    ) -> str:
         def Combo(n: int) -> int:
             match n:
                 case n if n <= 3:
@@ -48,6 +54,8 @@ class Day17(Solution):
         while ip < len(program):
             opcode, arg = program[ip], program[ip + 1]
             ip, A, B, C = Step(opcode, arg, ip, A, B, C, output)
+            if desiredOutputLength is not None and len(output) == desiredOutputLength:
+                break
 
         return output
 
@@ -72,7 +80,9 @@ class Day17(Solution):
 
         for i in range(8):
             testNumber = currentA | (i << (currentIndex * 3))
-            output = Day17.RunProgram(program, testNumber)
+            output = Day17.RunProgram(
+                program, testNumber, desiredOutputLength=currentIndex + 1
+            )
             if output[currentIndex] == desiredOutput[currentIndex]:
                 if currentIndex == 0:
                     # Found a solution
